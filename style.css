@@ -1,0 +1,464 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f7f8fc;
+    --white: #ffffff;
+    --text: #171923;
+    --muted: #737887;
+    --border: #e5e7ef;
+    --primary: #5b5ce2;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.app {
+    width: 100%;
+    max-width: 520px;
+    height: 100vh;
+    margin: auto;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+    height: 64px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    position: relative;
+    z-index: 20;
+}
+
+.icon-btn,
+.profile-btn {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f2f7;
+
+    font-size: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:active,
+.profile-btn:active {
+    transform: scale(0.94);
+}
+
+.app-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main-content {
+    position: absolute;
+
+    top: 64px;
+    bottom: 150px;
+    left: 0;
+    right: 0;
+
+    overflow-y: auto;
+
+    padding: 25px 18px;
+}
+
+.welcome {
+    min-height: 100%;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding-bottom: 30px;
+}
+
+.ai-logo {
+    width: 76px;
+    height: 76px;
+
+    border-radius: 24px;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+
+    box-shadow:
+        0 8px 30px rgba(30, 35, 70, 0.08);
+
+    margin-bottom: 22px;
+}
+
+.welcome h1 {
+    max-width: 360px;
+
+    font-size: 27px;
+    line-height: 1.25;
+
+    margin-bottom: 12px;
+}
+
+.welcome p {
+    max-width: 330px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CHAT AREA
+========================= */
+
+.chat-area {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 65px;
+
+    background: var(--bg);
+
+    padding: 10px 14px 8px;
+
+    z-index: 30;
+}
+
+.input-box {
+    width: 100%;
+
+    min-height: 56px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 6px;
+
+    box-shadow:
+        0 5px 20px rgba(30, 35, 70, 0.06);
+}
+
+.input-box input {
+    flex: 1;
+
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 15px;
+
+    padding: 0 9px;
+}
+
+.input-box button {
+    flex-shrink: 0;
+}
+
+.add-btn,
+.mic-btn,
+.send-btn {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.add-btn {
+    background: #f0f1f6;
+    color: #333;
+}
+
+.mic-btn {
+    background: transparent;
+}
+
+.send-btn {
+    background: var(--primary);
+    color: white;
+}
+
+.add-btn:active,
+.mic-btn:active,
+.send-btn:active {
+    transform: scale(0.92);
+}
+
+.disclaimer {
+    text-align: center;
+
+    color: #9296a3;
+
+    font-size: 10px;
+
+    margin-top: 7px;
+}
+
+
+/* =========================
+   TOOLS MENU
+========================= */
+
+.tools-menu {
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+    bottom: 130px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 10px;
+
+    box-shadow:
+        0 15px 45px rgba(20, 25, 60, 0.18);
+
+    z-index: 100;
+
+    display: none;
+
+    max-height: 65vh;
+
+    overflow-y: auto;
+}
+
+.tools-menu.show {
+    display: block;
+}
+
+.tools-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 6px 12px;
+}
+
+.tools-header h2 {
+    font-size: 17px;
+}
+
+.tools-header button {
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f2f7;
+
+    font-size: 22px;
+}
+
+.tool-item {
+    width: 100%;
+
+    border: none;
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+.tool-item:hover {
+    background: #f4f5fb;
+}
+
+.tool-item:active {
+    background: #e9eaf5;
+    transform: scale(0.99);
+}
+
+.tool-item span {
+    font-size: 15px;
+}
+
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 65px;
+
+    background: white;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+
+    justify-content: space-around;
+
+    z-index: 40;
+}
+
+.nav-item {
+    flex: 1;
+
+    border: none;
+
+    background: transparent;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 3px;
+
+    font-size: 20px;
+
+    color: #858997;
+}
+
+.nav-item small {
+    font-size: 11px;
+}
+
+.nav-item.active {
+    color: var(--primary);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .welcome h1 {
+        font-size: 23px;
+    }
+
+    .app-title {
+        font-size: 15px;
+    }
+
+    .main-content {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+}
+.ai-message {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 15px 0;
+}
+
+.ai-bubble {
+    max-width: 85%;
+    background: white;
+    border: 1px solid #e5e7ef;
+    color: #171923;
+    padding: 14px 16px;
+    border-radius: 18px 18px 18px 4px;
+    font-size: 15px;
+    line-height: 1.6;
+    box-shadow: 0 4px 15px rgba(30, 35, 70, 0.05);
+}
+
+.ai-bubble span {
+    color: #737887;
+}

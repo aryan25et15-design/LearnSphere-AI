@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LearnSphere AI</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <header class="top-bar">
+
+        <button
+            id="menuBtn"
+            class="icon-btn"
+            type="button"
+        >
+            ☰
+        </button>
+
+
+        <div class="app-title">
+
+            <span>📚</span>
+
+            <strong>
+                LearnSphere AI
+            </strong>
+
+        </div>
+
+
+        <button
+            id="profileBtn"
+            class="profile-btn"
+            type="button"
+        >
+            👤
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main
+        id="mainContent"
+        class="main-content"
+    >
+
+
+        <!-- WELCOME AREA -->
+
+        <div
+            id="welcome"
+            class="welcome"
+        >
+
+
+            <!-- BOOK BOX -->
+
+            <div class="ai-logo">
+
+                <div class="book-glow">
+                    📚
+                </div>
+
+            </div>
+
+
+
+            <!-- MAIN TITLE -->
+
+            <h1>
+                What can I help you study today?
+            </h1>
+
+
+
+            <!-- SUBTITLE -->
+
+            <p>
+                Read, learn, create and explore
+                knowledge from around the world.
+            </p>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         CHAT AREA
+    ========================== -->
+
+    <div class="chat-area">
+
+
+        <div class="input-box">
+
+
+            <!-- PLUS -->
+
+            <button
+                id="addBtn"
+                class="add-btn"
+                type="button"
+            >
+                +
+            </button>
+
+
+
+            <!-- MESSAGE INPUT -->
+
+            <input
+                id="messageInput"
+                type="text"
+                placeholder="Ask anything..."
+                autocomplete="off"
+            >
+
+
+
+            <!-- MICROPHONE -->
+
+            <button
+                id="micBtn"
+                class="mic-btn"
+                type="button"
+            >
+                🎤
+            </button>
+
+
+
+            <!-- SEND -->
+
+            <button
+                id="sendBtn"
+                class="send-btn"
+                type="button"
+            >
+                ➤
+            </button>
+
+
+        </div>
+
+
+
+        <p class="disclaimer">
+            LearnSphere AI can make mistakes.
+        </p>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         TOOLS MENU
+    ========================== -->
+
+    <div
+        id="toolsMenu"
+        class="tools-menu"
+    >
+
+
+        <div class="tools-header">
+
+
+            <h2>
+                Create & Attach
+            </h2>
+
+
+            <button
+                id="closeTools"
+                type="button"
+            >
+                ×
+            </button>
+
+
+        </div>
+
+
+
+        <!-- IMAGE -->
+
+        <button
+            class="tool-item"
+            data-name="Image"
+            type="button"
+        >
+
+            📷
+
+            <span>
+                Add Image
+            </span>
+
+        </button>
+
+
+
+        <!-- FILE -->
+
+        <button
+            class="tool-item"
+            data-name="File"
+            type="button"
+        >
+
+            📁
+
+            <span>
+                Add File
+            </span>
+
+        </button>
+
+
+
+        <!-- PDF -->
+
+        <button
+            class="tool-item"
+            data-name="PDF"
+            type="button"
+        >
+
+            📄
+
+            <span>
+                Create PDF
+            </span>
+
+        </button>
+
+
+
+        <!-- EXCEL -->
+
+        <button
+            class="tool-item"
+            data-name="Excel"
+            type="button"
+        >
+
+            📊
+
+            <span>
+                Create Excel
+            </span>
+
+        </button>
+
+
+
+        <!-- WORD -->
+
+        <button
+            class="tool-item"
+            data-name="Document"
+            type="button"
+        >
+
+            📝
+
+            <span>
+                Create Word Document
+            </span>
+
+        </button>
+
+
+
+        <!-- IMAGE GENERATION -->
+
+        <button
+            class="tool-item"
+            data-name="Generate Image"
+            type="button"
+        >
+
+            🎨
+
+            <span>
+                Generate Image
+            </span>
+
+        </button>
+
+
+
+        <!-- LINK -->
+
+        <button
+            class="tool-item"
+            data-name="Link"
+            type="button"
+        >
+
+            🔗
+
+            <span>
+                Add Link
+            </span>
+
+        </button>
+
+
+
+        <!-- QUIZ -->
+
+        <button
+            class="tool-item"
+            data-name="Quiz"
+            type="button"
+        >
+
+            🧠
+
+            <span>
+                Create Quiz
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         BOTTOM NAVIGATION
+    ========================== -->
+
+    <nav class="bottom-nav">
+
+
+        <!-- HOME -->
+
+        <button
+            class="nav-item active"
+            data-page="Home"
+            type="button"
+        >
+
+            🏠
+
+            <small>
+                Home
+            </small>
+
+        </button>
+
+
+
+        <!-- HISTORY -->
+
+        <button
+            class="nav-item"
+            data-page="History"
+            type="button"
+        >
+
+            🕘
+
+            <small>
+                History
+            </small>
+
+        </button>
+
+
+
+        <!-- PROFILE -->
+
+        <button
+            class="nav-item"
+            data-page="Profile"
+            type="button"
+        >
+
+            👤
+
+            <small>
+                Profile
+            </small>
+
+        </button>
+
+
+    </nav>
+
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
